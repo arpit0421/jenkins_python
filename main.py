@@ -1,16 +1,26 @@
-# This is a sample Python script.
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import sys
+import psutil
+import shutil
+
+def Main():
+    opt = sys.argv[1]
+    print_option(opt)
+
+def print_option(opt):
+    if (opt == 'd' or opt == 'D'):
+        stats = shutil.disk_usage("/")
+        print("Disk usage stats:", stats)
+    elif(opt == 'c' or opt == 'C'):
+        print('The CPU usage is:', psutil.cpu_percent(4))
+    elif (opt == 'r' or opt == 'R'):
+        print('RAM memory % used:', psutil.virtual_memory()[2])
+    else:
+        print("Invalid Option")
+        exit()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+if __name__ == '__main__': Main()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
