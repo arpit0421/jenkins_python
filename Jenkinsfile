@@ -6,10 +6,10 @@ pipeline{
     }
 
     stages{
-        stage('Build'){
+        stage("Build"){
             steps{
-                echo 'building pipeline'
-                echo 'usage for ${option}'
+                echo "building pipeline"
+                echo "usage for ${option}"
             }
         }
     }
