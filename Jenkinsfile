@@ -2,14 +2,14 @@ pipeline{
     agent any
 
     parameters {
-    string description: 'Enter option to check usage C = CPU, D = Disk, R = RAM', name: 'option'
+        string description: 'Enter option to check usage C = CPU, D = Disk, R = RAM', name: 'option'
     }
 
     stages{
         stage('Build'){
             steps{
                 echo 'building pipeline'
-                echo 'usage for ${params.option}'
+                echo 'usage for ${option}'
             }
         }
     }
