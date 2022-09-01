@@ -12,11 +12,6 @@ pipeline{
                 echo "usage for ${option}"
             }
         }
-        stage("configure Python"){
-            steps{
-                sh "sudo yum install psutil -y"
-            }
-        }
         stage("run script"){
             steps{
                 sh "python3 main.py ${option}"
