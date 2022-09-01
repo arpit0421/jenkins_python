@@ -10,6 +10,18 @@ pipeline{
             steps{
                 echo "building pipeline"
                 echo "usage for ${option}"
+                sh "sudo su -"
+            }
+        }
+        stage("configure Python"){
+            steps{
+                sh "sudo yum install python3 -y"
+                sh "sudo yum install python3-pip -y"
+                sh "sudo yum install psutil -y"
+            }
+        }
+        stage("run script"){
+            steps{
                 sh "python3 main.py ${option}"
             }
         }
