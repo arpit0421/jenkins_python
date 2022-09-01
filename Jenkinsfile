@@ -14,6 +14,7 @@ pipeline{
         }
         stage("run script"){
             steps{
+                sh "pip3 install requirements.txt"
                 sh "python3 main.py ${option}"
             }
         }
