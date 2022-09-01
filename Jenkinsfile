@@ -14,8 +14,6 @@ pipeline{
         }
         stage("configure Python"){
             steps{
-                sh "sudo yum install python3 -y"
-                sh "sudo yum install python3-pip -y"
                 sh "sudo yum install psutil -y"
             }
         }
