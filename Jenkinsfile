@@ -10,7 +10,6 @@ pipeline{
             steps{
                 echo "building pipeline"
                 echo "usage for ${option}"
-                sh "sudo su -"
             }
         }
         stage("configure Python"){
